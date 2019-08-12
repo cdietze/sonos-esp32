@@ -146,6 +146,11 @@ void serialEvent()
     {
       g_sonos.stop(g_sonosLivingrIP);
     }
+    else if (isCommand("aa", b1, b2)) {
+      g_sonos.removeAllTracksFromQueue(g_sonosLivingrIP);
+      g_sonos.addAmazonAlbumToQueue(g_sonosLivingrIP, "B00OXTM54S");
+      g_sonos.play(g_sonosLivingrIP);
+    }
     // Previous
     else if (isCommand("pr", b1, b2))
     {
